@@ -25,9 +25,13 @@ if __name__ == '__main__':
         # call target_url and append DataFrame
         df.loc[count] = [dt.datetime.now(), target_url, requests.get(target_url)]
 
+        if '200' not in str(df.loc[count, 'Return']):
+            print('200 is not exist')
+            print(df)
+
         count += 1
 
-        if date.hour == 23 and date.minute == 59:
+        if date.minute == 59:
             if dt.datetime.now().month < 10:
                 filename = str(date.year) + '-0' + str(date.month) + '-' + str(date.day) + ".csv"
             else:
