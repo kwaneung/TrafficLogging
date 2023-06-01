@@ -33,8 +33,8 @@ if __name__ == '__main__':
 
         if date.minute == 59:
             if dt.datetime.now().month < 10:
-                filename = str(date.year) + '-0' + str(date.month) + '-' + str(date.day) + ".csv"
+                filename = str(date.year) + '-0' + str(date.month) + '-' + str(date.day) + '-' + str(date.hour) + ".csv"
             else:
-                filename = str(date.year) + '-' + str(date.month) + '-' + str(date.day) + ".csv"
+                filename = str(date.year) + '-' + str(date.month) + '-' + str(date.day) + '-' + str(date.hour) + ".csv"
 
             df.to_csv(filename, mode='w')
